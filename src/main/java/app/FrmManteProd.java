@@ -142,6 +142,15 @@ public class FrmManteProd extends JFrame {
 		cboProvedor = new JComboBox();
 		cboProvedor.setBounds(320, 103, 86, 22);
 		contentPane.add(cboProvedor);
+		
+		JButton btnbuscar = new JButton("buscar");
+		btnbuscar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				buscarProducto();
+			}
+		});
+		btnbuscar.setBounds(320, 70, 89, 23);
+		contentPane.add(btnbuscar);
 
 		
 		llenaCombo();
@@ -207,6 +216,24 @@ public class FrmManteProd extends JFrame {
 		}
         
 		
+	}
+	
+	void buscarProducto() {
+		
+        EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("mysql");
+		
+		EntityManager em = fabrica.createEntityManager();
+		
+		Producto p = em.find(Producto.class,txtCodigo.getText());
+	
+		
+		if(p != null) {
+		txtDescripcion.setText(p.getDescripcion());
+		}else
+		txtSalida.setText("CODIGO NO EXISTE !!");
+		
+		em.close();
+
 	}
 	
 	void registrar() {

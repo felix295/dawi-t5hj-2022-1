@@ -10,6 +10,8 @@ public class Demo4 {
 	
 	public static void main(String[] args) {
 		
+		//COMO SE HACE UNA CONSULTA O BUSCAR
+		
 		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("mysql");
 		
 		EntityManager em = fabrica.createEntityManager();
