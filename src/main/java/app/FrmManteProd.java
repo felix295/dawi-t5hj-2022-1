@@ -230,7 +230,7 @@ public class FrmManteProd extends JFrame {
 		if(p != null) {
 		txtDescripcion.setText(p.getDescripcion());
 		}else
-		txtSalida.setText("CODIGO NO EXISTE !!");
+		txtSalida.setText("CODIGO NO EXISTE.. !!");
 		
 		em.close();
 

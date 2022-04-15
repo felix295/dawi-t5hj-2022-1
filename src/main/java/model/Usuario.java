@@ -21,7 +21,7 @@ public class Usuario {
 	private String usuario;
 	@Column(name = "cla_usua")
 	private String clave;
-	@Column(name = "fnac_usua")
+	@Column(name = "fna_usua")
 	private String fecnaci;
 	@Column(name = "idtipo")
 	private int tipo;
